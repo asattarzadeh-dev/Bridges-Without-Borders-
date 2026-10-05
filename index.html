@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bridges Without Borders — Westview High School</title>
-<meta name="description" content="Bridges Without Borders connects Westview High School students with local refugee youth through mentorship, academic support, and community-driven resources.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Bridges Without Borders connects Westview High School students with local refugee youth through mentorship, academic support, and community-driven resources." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
     --navy: #1B2A41;
@@ -46,6 +46,24 @@
   section{padding:88px 0;}
   @media(max-width:640px){section{padding:56px 0;}}
 
+  /* Skip link */
+  .skip-link{
+    position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+  }
+  .skip-link:focus {
+    position:static;
+    width:auto;
+    height:auto;
+    left:0;
+    top:0;
+    background:#fff;
+    color:var(--navy-deep);
+    padding:8px 12px;
+    z-index:9999;
+    border:1px solid var(--line);
+    border-radius:6px;
+  }
+
   /* NAV */
   header.site-nav{
     position:sticky;top:0;z-index:50;
@@ -70,6 +88,7 @@
   }
   .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
   .menu-toggle svg{width:24px;height:24px;stroke:var(--navy-deep);}
+
   @media(max-width:780px){
     nav.links{
       position:fixed;top:64px;left:0;right:0;bottom:0;
@@ -132,7 +151,7 @@
   .mission-card p{font-family:var(--serif);font-size:1.25rem;line-height:1.5;color:var(--navy-deep);margin:0;}
   .mission-stats{display:flex;justify-content:center;gap:56px;margin-top:44px;flex-wrap:wrap;}
   .stat{text-align:center;}
-  .stat b{display:block;font-family:var(--serif);font-size:2rem;color:var(--clay);}
+  .stat strong{display:block;font-family:var(--serif);font-size:2rem;color:var(--clay);}
   .stat span{font-size:0.85rem;color:rgba(35,32,26,0.65);}
 
   /* TRUST / SAFEGUARDS */
@@ -177,6 +196,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header class="site-nav">
   <div class="nav-inner">
     <a href="#top" class="brand">
@@ -188,21 +209,21 @@
       </svg>
       Bridges Without Borders
     </a>
-    <nav class="links" id="navLinks">
+    <nav class="links" id="navLinks" role="navigation" aria-label="Primary">
       <a href="#mission">Mission</a>
       <a href="#trust">Our Approach</a>
       <a href="#contact">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:12px;">
       <a href="#contact" class="nav-cta">Contact Us</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" type="button">
         <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main-content">
 
   <!-- HERO -->
   <section class="hero">
@@ -211,9 +232,9 @@
       <h1>A bridge is only as strong as the people who show up to build it.</h1>
       <p class="lede">Bridges Without Borders connects Westview students with local refugee youth through mentorship, academic support, and community-driven resources — so every student feels supported as they navigate their new community.</p>
       <div class="hero-ctas">
-        <a href="PASTE_YOUR_FORM_LINK_HERE" class="btn btn-gold" target="_blank" rel="noopener">I'm a Student — Volunteer as a Tutor</a>
+        <a href="PASTE_YOUR_FORM_LINK_HERE" class="btn btn-gold" target="_blank" rel="noopener noreferrer">I'm a Student — Volunteer as a Tutor</a>
         <a href="#contact" class="btn btn-outline">I'm an Organization — Partner With Us</a>
-        <a href="PASTE_YOUR_FORM_LINK_HERE" class="btn btn-teal" target="_blank" rel="noopener">I'm a Student — Get Free Tutoring</a>
+        <a href="PASTE_YOUR_FORM_LINK_HERE" class="btn btn-teal" target="_blank" rel="noopener noreferrer">I'm a Student — Get Free Tutoring</a>
       </div>
     </div>
 
@@ -255,9 +276,9 @@
         <p>"Bridges Without Borders connects Westview High School students with local refugee youth through mentorship, academic support, and community-driven resources. We empower refugee students to succeed in school, build confidence, and feel supported as they navigate their new communities."</p>
       </div>
       <div class="mission-stats">
-        <div class="stat"><b>1:1</b><span>Mentorship model</span></div>
-        <div class="stat"><b>Consent-based</b><span>Every match starts with a referral</span></div>
-        <div class="stat"><b>Faculty-led</b><span>Supervised by a Westview advisor</span></div>
+        <div class="stat"><strong>1:1</strong><span>Mentorship model</span></div>
+        <div class="stat"><strong>Consent-based</strong><span>Every match starts with a referral</span></div>
+        <div class="stat"><strong>Faculty-led</strong><span>Supervised by a Westview advisor</span></div>
       </div>
     </div>
   </section>
@@ -317,11 +338,80 @@
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const toggle = document.getElementById('menuToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  (function () {
+    const links = document.getElementById('navLinks');
+    const toggle = document.getElementById('menuToggle');
+    const yearEl = document.getElementById('year');
+
+    function isMobile() {
+      return window.matchMedia('(max-width: 780px)').matches;
+    }
+
+    // initialize
+    toggle.setAttribute('aria-expanded', 'false');
+    if (isMobile()) {
+      links.setAttribute('aria-hidden', 'true');
+    } else {
+      links.removeAttribute('aria-hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(!!isOpen));
+      links.setAttribute('aria-hidden', String(!isOpen));
+
+      if (isOpen) {
+        // prevent background scroll on mobile
+        document.body.style.overflow = 'hidden';
+        // move focus to first link for keyboard users
+        const firstLink = links.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        document.body.style.overflow = '';
+        toggle.focus();
+      }
+    });
+
+    // Close menu when any nav link is clicked and restore state
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        links.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }));
+
+    // Close the menu on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        links.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        toggle.focus();
+      }
+    });
+
+    // set year
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // adjust aria-hidden if the viewport changes
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (!isMobile()) {
+          links.classList.remove('open');
+          links.removeAttribute('aria-hidden');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        } else if (!links.classList.contains('open')) {
+          links.setAttribute('aria-hidden', 'true');
+        }
+      }, 120);
+    });
+  })();
 </script>
 
 </body>
